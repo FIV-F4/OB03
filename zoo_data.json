@@ -1,0 +1,24 @@
+{
+    "animals": [
+        {
+            "type": "Bird",
+            "name": "\u0421\u0438\u043d\u0438\u0447\u043a\u0430",
+            "age": 2,
+            "parameter": "\u0421\u0438\u043d\u044f\u044f"
+        },
+        {
+            "type": "Reptile",
+            "name": "\u042f\u0449\u0435\u0440\u0438\u0446\u0430",
+            "age": 3,
+            "parameter": "\u041a\u0440\u0430\u0441\u043d\u0430\u044f"
+        }
+    ],
+    "employees": [
+        {
+            "name": "\u0418\u0432\u0430\u043d",
+            "age": 35,
+            "parameter": "\u0417\u0430\u043b\u044b\u0441\u0438\u043d\u0430",
+            "profession": "ZooKeeper"
+        }
+    ]
+}
