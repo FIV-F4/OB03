@@ -56,10 +56,53 @@ class Reptile(Animal):
         print("Рептилии едят яйца")
 
 
+class Zoo:
+    def __init__(self):
+        self.animals = []
+        self.employees = {}
+
+    def add_animal(self, animal, name, age, parameter):
+        if animal == "bird":
+            animal = Bird(name, age, parameter)
+        elif animal == "mammal":
+            animal = Mammal(name, age, parameter)
+        elif animal == "reptile":
+            animal = Reptile(name, age, parameter)
+        else:
+            print("Такого животного нет")
+            return
+        self.animals.append(animal)
+
+
+    def add_employee(self, name, age, parameter, profession):
+        mammal = Mammal(name, age, parameter)
+        self.employees.update({mammal: profession})
+
+
+class ZooKeeper(Zoo):
+    def feed_animal(self):
+        print("Животное накормлено")
+class Veterinarian(Zoo):
+    def heal_animal(self):
+        print("Животное вылечено")
 def animal_sound(animals):
     for animal in animals:
         animal.make_sound()
+def zoo_info(zoo):
+    print(f'В зоопарке {len(zoo.animals)} животных и {len(zoo.employees)} сотрудников.')
+
+
 
 
 animals = [Bird("Синичка", 2, "Синяя"), Mammal("Иван", 35, "Залысина"), Reptile("Ящерица", 3, "Красная")]
 animal_sound(animals)
+
+zoo = Zoo()
+zoo.add_animal("bird", "Синичка", 2, "Синяя")
+zoo.add_animal("reptile", "Ящерица", 3, "Красная")
+zoo.add_employee("Иван", 35, "Залысина", ZooKeeper())
+
+zoo_info(zoo)
+
+for employee, profession in zoo.employees.items():
+    print(f"{employee.name}, возраст {employee.age}, профессия: {profession.__class__.__name__}")
